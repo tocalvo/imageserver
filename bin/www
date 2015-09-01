@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var debug = require('debug')('cropper');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 22000);
+
+var server = app.listen(app.get('port'), function() {
+	debug('Express server listening on port ' + server.address().port);
+	console.log( 'port ' + process.env.PORT );
+	console.log( 'NODE_ENV ' + process.env.NODE_ENV );
+});
